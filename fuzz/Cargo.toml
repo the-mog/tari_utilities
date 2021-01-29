@@ -1,0 +1,64 @@
+
+[package]
+name = "tari_utilities-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = { version = "0.3" }
+
+[dependencies.tari_utilities]
+path = ".."
+features = ["arbitrary"]
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "bit_byte_to_bits"
+path = "fuzz_targets/bit_byte_to_bits.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "bit_bytes_to_bits"
+path = "fuzz_targets/bit_bytes_to_bits.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "hex_to_hex"
+path = "fuzz_targets/hex_to_hex.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "hex_to_hex_multiple"
+path = "fuzz_targets/hex_to_hex_multiple.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "hex_from_hex"
+path = "fuzz_targets/hex_from_hex.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fixed_set_all"
+path = "fuzz_targets/fixed_set_all.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "epoch_time_all"
+path = "fuzz_targets/epoch_time_all.rs"
+test = false
+doc = false
+
