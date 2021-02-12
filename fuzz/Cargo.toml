@@ -62,3 +62,9 @@ path = "fuzz_targets/epoch_time_all.rs"
 test = false
 doc = false
 
+
+[[bin]]
+name = "fuzzer"
+path = "fuzz_targets/fuzzer.rs"
+test = false
+doc = false
